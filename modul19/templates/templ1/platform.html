@@ -1,0 +1,11 @@
+{% extends 'templ1/menu.html' %}
+<head id="str1">
+    {% block title %}Главная{% endblock %}
+</head>
+{% block pagename%}
+    <h1>Главная страница</h1>
+{% endblock %}
+
+{% block menu %}
+    {{block.super}}
+{% endblock %}

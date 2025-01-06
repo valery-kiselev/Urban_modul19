@@ -1,0 +1,20 @@
+{% extends 'templ1/menu.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block pagename%}
+<h1>Магазин</h1>
+{% endblock %}
+
+{% block menu %}
+    {{block.super}}
+{% endblock %}
+<!--        <button onclick="window.location.href='../#str1'"><h2>Вернуться обратно</h2></button>-->
+
+{% block content %}
+<ul>
+    {% for game in games%}
+        <li>{{game.title}} | {{game.description}}. Цена: {{game.cost}}<button>купить</button></li>
+    {% endfor %}
+</ul>
+{% endblock %}

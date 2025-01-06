@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Title{% endblock %}</title>
+</head>
+<body>
+    <header>
+        {% block pagename%} <!-- Заголовок страницы --> {% endblock %}
+    </header>
+    <main>
+        {% block menu %}
+        <ul>
+            <li><a href="../#str1">Главная</a></li>
+            <li><a href="/platform/games">Магазин</a></li>
+            <li><a href="/platform/cart">Корзина</a></li>
+        </ul>
+        {% endblock %}
+    </main>
+    <p>
+        {% block content %}
+        <!-- Content -->
+        {% endblock %}
+    </p>
+</body>
+</html>

@@ -1,0 +1,15 @@
+{% extends 'templ1/menu.html' %}
+
+{% block title %}Главная{% endblock %}
+
+{% block pagename%}
+<h1>Корзина</h1>
+{% endblock %}
+
+{% block menu %}
+    {{block.super}}
+{% endblock %}
+<!--        <button onclick="window.location.href='../#str1'"><h2>Вернуться обратно</h2></button>-->
+{% block content %}
+<h2>Ваша корзина пуста</h2>
+{% endblock %}
