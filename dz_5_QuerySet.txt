@@ -1,0 +1,12 @@
+python manage.py shell
+from task1.models import Buyer
+Buyer.objects.all()
+<QuerySet [<Buyer: Геймер1>, <Buyer: Геймер2>, <Buyer: Геймер3>]>
+Buyer.objects.filter(id=6)
+<QuerySet [<Buyer: Геймер3>]>
+Buyer.objects.create(name="Геймер4", balance=1500, age=20)
+<Buyer: Геймер4>
+Buyer.objects.get(id=5).delete()
+(1, {'task1.Buyer': 1})
+Buyer.objects.all()
+<QuerySet [<Buyer: Геймер1>, <Buyer: Геймер3>, <Buyer: Геймер4>]>
