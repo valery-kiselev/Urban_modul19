@@ -2,6 +2,7 @@ from django.shortcuts import render
 from django.http import HttpResponse
 from .forms import UserRegister
 from .models import *
+from django.core.paginator import Paginator
 
 
 # Create your views here.
@@ -16,6 +17,12 @@ def games(request):
 def cart(request):
     return render(request, 'templ1/cart.html')
 
+def news(request):
+    news = News.objects.all().order_by('date')
+    paginator = Paginator(news, 3)
+    page_number = request.GET.get('page')
+    page_news = paginator.get_page(page_number)
+    return render(request, 'templ1/news.html', {'news':page_news})
 
 def sign_up_by_html(request):
     users = Buyer.objects.all()
